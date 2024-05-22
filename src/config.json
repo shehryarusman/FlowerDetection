@@ -1,0 +1,38 @@
+{
+	"data_loader": {
+		"train_data_augmentation_settings": {
+			"rotation_range":40,
+			"width_shift_range":[-0.2,0.2],
+			"height_shift_range":[-0.2,0.2],
+			"brightness_range":[0.6,1.0],
+			"shear_range":0.0,
+			"channel_shift_range":0.0,
+			"fill_mode":"constant",
+			"cval":0.0,
+			"horizontal_flip":"True",
+			"vertical_flip":"True"
+		},
+		"test_data_augmentation_settings": {},
+		"target_size": 224,
+		"train_size": 0.8,
+		"batch_size": 32,
+		"random_state": 42
+	},
+	"model": {
+		"number_of_categories": 102,
+		"dropout_rate": 0.2,
+		"learning_rate": 1e-3,
+		"learning_rate_shrinker": 10,
+		"metrics": "accuracy",
+		"loss": "sparse_categorical_crossentropy",
+		"random_seed": 42
+	},
+	"trainer": {
+		"early_stopping_patience": 5,
+		"number_of_base_epochs": 100,
+		"number_of_fine_tune_epochs": 100,
+		"validation_split": 0.8,
+		"verbose_training": true,
+		"percentage_of_frozen_layers": 0.8
+	}
+}
